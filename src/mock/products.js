@@ -1,0 +1,79 @@
+export const mockProducts = [
+  {
+    id: 1,
+    name: "Apple iPhone 11 Pro Max",
+    brand: "Apple",
+    color: "Siyah",
+    price: 90.85,
+    originalPrice: 124.00,
+    discount: 12,
+    imageUrl: "https://placehold.co/200x300?text=iPhone+11+Pro+Max",
+    createdAt: "2026-03-01T10:00:00Z"
+  },
+  {
+    id: 2,
+    name: "Apple iPhone 11",
+    brand: "Apple",
+    color: "Sarı",
+    price: 800.85,
+    originalPrice: 920.80,
+    discount: 2,
+    imageUrl: "https://placehold.co/200x300?text=iPhone+11+Yellow",
+    createdAt: "2026-03-02T11:00:00Z"
+  },
+  {
+    id: 3,
+    name: "iPhone 11 Kırmızı Kılıf",
+    brand: "Apple",
+    color: "Kırmızı",
+    price: 127.85,
+    originalPrice: 154.00,
+    discount: 13,
+    imageUrl: "https://placehold.co/200x300?text=Red+Case",
+    createdAt: "2026-02-15T09:00:00Z"
+  },
+  {
+    id: 4,
+    name: "Samsung Galaxy S23",
+    brand: "Samsung",
+    color: "Siyah",
+    price: 1250.00,
+    originalPrice: 1400.00,
+    discount: 10,
+    imageUrl: "https://placehold.co/200x300?text=S23+Black",
+    createdAt: "2026-03-04T08:30:00Z"
+  },
+  {
+    id: 5,
+    name: "Huawei P50 Pro",
+    brand: "Huawei",
+    color: "Beyaz",
+    price: 950.00,
+    originalPrice: 1100.00,
+    discount: 15,
+    imageUrl: "https://placehold.co/200x300?text=P50+Pro",
+    createdAt: "2026-01-20T14:00:00Z"
+  },
+  {
+    id: 6,
+    name: "Xiaomi Redmi Note 12",
+    brand: "Xiaomi",
+    color: "Mavi",
+    price: 450.00,
+    originalPrice: 500.00,
+    discount: 10,
+    imageUrl: "https://placehold.co/200x300?text=Redmi+12",
+    createdAt: "2026-03-05T12:00:00Z"
+  },
+  ...Array.from({ length: 34 }, (_, i) => ({
+    id: i + 7,
+    name: `${["Samsung", "Apple", "Xiaomi", "Huawei", "LG", "Nokia"][i % 6]} Model ${i + 100}`,
+    brand: ["Samsung", "Apple", "Xiaomi", "Huawei", "LG", "Nokia"][i % 6],
+    color: ["Siyah", "Beyaz", "Sarı", "Kırmızı", "Lacivert", "Gri"][i % 6],
+    price: Math.floor(Math.random() * 2000) + 100,
+    originalPrice: Math.floor(Math.random() * 2500) + 500,
+    discount: Math.floor(Math.random() * 20),
+    imageUrl: `https://placehold.co/200x300?text=Product+${i + 7}`,
+    createdAt: new Date(Date.now() - Math.floor(Math.random() * 1000000000)).toISOString()
+  }))
+];
