@@ -15,7 +15,7 @@
 }
 
 .product-card:hover {
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .product-image img {
@@ -182,4 +182,10 @@
   border: 1px solid #e0e0e0;
   cursor: not-allowed;
   font-size: 12px;
+}
+.product-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
 }

@@ -1,6 +1,10 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { setBrandFilter, setColorFilter, setSortOrder } from '../store/productSlice';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setBrandFilter,
+  setColorFilter,
+  setSortOrder,
+} from "../store/productSlice";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -19,10 +23,11 @@ const Sidebar = () => {
   }, {});
 
   const sortOptions = [
-    { label: 'En Düşük Fiyat', value: 'lowestPrice' },
-    { label: 'En Yüksek Fiyat', value: 'highestPrice' },
-    { label: 'En Yeniler (A>Z)', value: 'newest-az' },
-    { label: 'En Yeniler (Z>A)', value: 'newest-za' },
+    { label: "En Düşük Fiyat", value: "lowestPrice" },
+    { label: "En Yüksek Fiyat", value: "highestPrice" },
+    { label: "En Yeniler (A>Z)", value: "newest-az" },
+    { label: "En Yeniler (Z>A)", value: "newest-za" },
+    { label: "Hepsi", value: "all" },
   ];
 
   return (
@@ -32,9 +37,9 @@ const Sidebar = () => {
         <h3 className="filter-title">Sıralama</h3>
         <ul className="filter-list">
           {sortOptions.map((option) => (
-            <li 
+            <li
               key={option.value}
-              className={`filter-item ${sortBy === option.value ? 'active' : ''}`}
+              className={`filter-item ${sortBy === option.value ? "active" : ""}`}
               onClick={() => dispatch(setSortOrder(option.value))}
             >
               {option.label}
@@ -48,9 +53,9 @@ const Sidebar = () => {
         <h3 className="filter-title">Marka</h3>
         <ul className="filter-list">
           {Object.entries(brands).map(([brand, count]) => (
-            <li 
+            <li
               key={brand}
-              className={`filter-item ${filters.brand === brand ? 'active' : ''}`}
+              className={`filter-item ${filters.brand === brand ? "active" : ""}`}
               onClick={() => dispatch(setBrandFilter(brand))}
             >
               {brand} ({count})
@@ -64,9 +69,9 @@ const Sidebar = () => {
         <h3 className="filter-title">Renk</h3>
         <ul className="filter-list">
           {Object.entries(colors).map(([color, count]) => (
-            <li 
+            <li
               key={color}
-              className={`filter-item ${filters.color === color ? 'active' : ''}`}
+              className={`filter-item ${filters.color === color ? "active" : ""}`}
               onClick={() => dispatch(setColorFilter(color))}
             >
               {color} ({count})

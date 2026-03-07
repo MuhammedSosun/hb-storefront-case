@@ -5,10 +5,10 @@ export const mockProducts = [
     brand: "Apple",
     color: "Siyah",
     price: 90.85,
-    originalPrice: 124.00,
+    originalPrice: 124.0,
     discount: 12,
     imageUrl: "https://placehold.co/200x300?text=iPhone+11+Pro+Max",
-    createdAt: "2026-03-01T10:00:00Z"
+    createdAt: "2026-03-01T10:00:00Z",
   },
   {
     id: 2,
@@ -16,10 +16,10 @@ export const mockProducts = [
     brand: "Apple",
     color: "Sarı",
     price: 800.85,
-    originalPrice: 920.80,
+    originalPrice: 920.8,
     discount: 2,
     imageUrl: "https://placehold.co/200x300?text=iPhone+11+Yellow",
-    createdAt: "2026-03-02T11:00:00Z"
+    createdAt: "2026-03-02T11:00:00Z",
   },
   {
     id: 3,
@@ -27,43 +27,43 @@ export const mockProducts = [
     brand: "Apple",
     color: "Kırmızı",
     price: 127.85,
-    originalPrice: 154.00,
+    originalPrice: 154.0,
     discount: 13,
     imageUrl: "https://placehold.co/200x300?text=Red+Case",
-    createdAt: "2026-02-15T09:00:00Z"
+    createdAt: "2026-02-15T09:00:00Z",
   },
   {
     id: 4,
     name: "Samsung Galaxy S23",
     brand: "Samsung",
     color: "Siyah",
-    price: 1250.00,
-    originalPrice: 1400.00,
+    price: 1250.0,
+    originalPrice: 1400.0,
     discount: 10,
     imageUrl: "https://placehold.co/200x300?text=S23+Black",
-    createdAt: "2026-03-04T08:30:00Z"
+    createdAt: "2026-03-04T08:30:00Z",
   },
   {
     id: 5,
     name: "Huawei P50 Pro",
     brand: "Huawei",
     color: "Beyaz",
-    price: 950.00,
-    originalPrice: 1100.00,
+    price: 950.0,
+    originalPrice: 1100.0,
     discount: 15,
     imageUrl: "https://placehold.co/200x300?text=P50+Pro",
-    createdAt: "2026-01-20T14:00:00Z"
+    createdAt: "2026-01-20T14:00:00Z",
   },
   {
     id: 6,
     name: "Xiaomi Redmi Note 12",
     brand: "Xiaomi",
     color: "Mavi",
-    price: 450.00,
-    originalPrice: 500.00,
+    price: 450.0,
+    originalPrice: 500.0,
     discount: 10,
     imageUrl: "https://placehold.co/200x300?text=Redmi+12",
-    createdAt: "2026-03-05T12:00:00Z"
+    createdAt: "2026-03-05T12:00:00Z",
   },
   ...Array.from({ length: 34 }, (_, i) => ({
     id: i + 7,
@@ -74,6 +74,8 @@ export const mockProducts = [
     originalPrice: Math.floor(Math.random() * 2500) + 500,
     discount: Math.floor(Math.random() * 20),
     imageUrl: `https://placehold.co/200x300?text=Product+${i + 7}`,
-    createdAt: new Date(Date.now() - Math.floor(Math.random() * 1000000000)).toISOString()
-  }))
+    createdAt: new Date(
+      Date.now() - Math.floor(Math.random() * 1000000000),
+    ).toISOString(),
+  })),
 ];
