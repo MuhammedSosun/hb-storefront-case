@@ -7,7 +7,7 @@ export const mockProducts = [
     price: 90.85,
     originalPrice: 124.0,
     discount: 12,
-    imageUrl: "https://placehold.co/200x300?text=iPhone+11+Pro+Max",
+    imageUrl: "/images/iphone-11-pro-max.jpg",
     createdAt: "2026-03-01T10:00:00Z",
   },
   {
