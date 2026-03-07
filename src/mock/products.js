@@ -10,6 +10,7 @@ export const mockProducts = [
     imageUrl: "/images/iphone-11-pro-max.jpg",
     createdAt: "2026-03-01T10:00:00Z",
   },
+
   {
     id: 2,
     name: "Apple iPhone 11",
@@ -18,7 +19,7 @@ export const mockProducts = [
     price: 800.85,
     originalPrice: 920.8,
     discount: 2,
-    imageUrl: "https://placehold.co/200x300?text=iPhone+11+Yellow",
+    imageUrl: "/images/iphone-11.jpg",
     createdAt: "2026-03-02T11:00:00Z",
   },
   {
@@ -29,7 +30,7 @@ export const mockProducts = [
     price: 127.85,
     originalPrice: 154.0,
     discount: 13,
-    imageUrl: "https://placehold.co/200x300?text=Red+Case",
+    imageUrl: "/images/kilif-iphone-red.jpg",
     createdAt: "2026-02-15T09:00:00Z",
   },
   {
@@ -40,7 +41,7 @@ export const mockProducts = [
     price: 1250.0,
     originalPrice: 1400.0,
     discount: 10,
-    imageUrl: "https://placehold.co/200x300?text=S23+Black",
+    imageUrl: "/images/s23-ultra.jpg",
     createdAt: "2026-03-04T08:30:00Z",
   },
   {
@@ -51,18 +52,18 @@ export const mockProducts = [
     price: 950.0,
     originalPrice: 1100.0,
     discount: 15,
-    imageUrl: "https://placehold.co/200x300?text=P50+Pro",
+    imageUrl: "/images/huawei-p50pro.jpg",
     createdAt: "2026-01-20T14:00:00Z",
   },
   {
     id: 6,
-    name: "Xiaomi Redmi Note 12",
+    name: "Xiaomi Redmi Note 17 pro max",
     brand: "Xiaomi",
     color: "Mavi",
     price: 450.0,
     originalPrice: 500.0,
     discount: 10,
-    imageUrl: "https://placehold.co/200x300?text=Redmi+12",
+    imageUrl: "/images/xiaomi-17.jpg",
     createdAt: "2026-03-05T12:00:00Z",
   },
   ...Array.from({ length: 34 }, (_, i) => ({
