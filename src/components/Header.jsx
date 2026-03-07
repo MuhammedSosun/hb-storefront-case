@@ -41,8 +41,8 @@ const Header = () => {
       <div className="container header-content">
         <div className="logo">
           <img
-            src="https://kurumsal.hepsiburada.com/assets/hepsiburada-logo.svg"
-            alt="Logo"
+            src="/images/hepsiburada-img.jpg"
+            alt="Hepsiburada Logo"
             width="150"
           />
         </div>
