@@ -7,48 +7,39 @@ import ProductCard from "../components/ProductCard";
 const ProductList = () => {
   const dispatch = useDispatch();
 
-  const { filteredItems, currentPage, itemsPerPage, sortBy, searchTerm } =
-    useSelector((state) => state.products);
+  const { filteredItems, currentPage, itemsPerPage, sortBy } = useSelector(
+    (state) => state.products,
+  );
+  const { cartItems } = useSelector((state) => state.cart);
+
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
   };
-  const { cartItems } = useSelector((state) => state.cart);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-
   const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem);
-
   const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
 
   const isInCart = (id) => cartItems.some((item) => item.id === id);
 
   return (
     <div className="product-list-wrapper">
-      {/* TOOLBAR */}
       <div className="product-toolbar">
-        <h2>
-          {searchTerm && searchTerm.length >= 2
-            ? `"${searchTerm}" için ${filteredItems.length} sonuç`
-            : `Toplam ${filteredItems.length} ürün`}
-        </h2>
+        <div className="toolbar-spacer"></div>
 
         <select
           className="native-selectbox"
           value={sortBy}
           onChange={(e) => dispatch(setSortOrder(e.target.value))}
         >
-          <option value="">Sıralama</option>
           <option value="lowestPrice">En Düşük Fiyat</option>
           <option value="highestPrice">En Yüksek Fiyat</option>
-          <option value="newest-az">En Yeniler (A {">"} Z)</option>
-
-          <option value="newest-za">En Yeniler (Z {">"} A)</option>
-          <option value="all">Filtreyi Kaldır</option>
+          <option value="newest-az">En Yeniler (A{">"}Z)</option>
+          <option value="newest-za">En Yeniler (Z{">"}A)</option>
         </select>
       </div>
 
-      {/* PRODUCT GRID */}
       <div className="product-grid">
         {currentItems.map((product) => (
           <ProductCard
@@ -60,7 +51,6 @@ const ProductList = () => {
         ))}
       </div>
 
-      {/* PAGINATION */}
       {totalPages > 1 && (
         <div className="pagination">
           <button

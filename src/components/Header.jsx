@@ -41,13 +41,13 @@ const Header = () => {
       <div className="container header-content">
         <div className="logo">
           <img
-            src="/images/hepsiburada-img.jpg"
-            alt="Hepsiburada Logo"
+            src="https://kurumsal.hepsiburada.com/assets/hepsiburada-logo.svg"
+            alt="Logo"
             width="150"
           />
         </div>
-
         <div className="search-bar">
+          <span className="search-icon" aria-hidden="true"></span>
           <input
             type="text"
             placeholder="25 milyondan fazla ürün içerisinde ara"
