@@ -29,15 +29,18 @@ const ProductList = () => {
         <div className="toolbar-spacer"></div>
 
         <select
-          className="native-selectbox"
-          value={sortBy}
-          onChange={(e) => dispatch(setSortOrder(e.target.value))}
-        >
-          <option value="lowestPrice">En Düşük Fiyat</option>
-          <option value="highestPrice">En Yüksek Fiyat</option>
-          <option value="newest-az">En Yeniler (A{">"}Z)</option>
+    className="native-selectbox"
+    value={sortBy || ""} 
+    onChange={(e) => dispatch(setSortOrder(e.target.value))}
+  >
+    {/* İlk başta bu görünecek ama liste açılınca seçilemeyecek */}
+    <option value="" disabled hidden>Sıralama</option>
+    
+    <option value="lowestPrice">En Düşük Fiyat</option>
+    <option value="highestPrice">En Yüksek Fiyat</option>
+  <option value="newest-az">En Yeniler (A{">"}Z)</option>
           <option value="newest-za">En Yeniler (Z{">"}A)</option>
-        </select>
+  </select>
       </div>
 
       <div className="product-grid">

@@ -11,6 +11,7 @@ import './styles/header.css';
 import './styles/products.css';
 import './styles/components.css';
 import './styles/sidebar.css';
+import './styles/modal.css'
 
 function App() {
   const dispatch = useDispatch();
