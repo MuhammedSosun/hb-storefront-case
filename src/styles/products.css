@@ -105,29 +105,54 @@
   transform: none;
 }
 
+/* --- PAGINATION FINAL --- */
 .pagination {
-  margin: 40px 0;
+  margin: 30px 0;
   display: flex;
-  justify-content: center;
-  gap: 8px;
+  justify-content: flex-start; /* Sola yaslar */
+  gap: 4px; /* Kutular arası dar boşluk */
 }
 
-.page-item {
-  width: 35px;
-  height: 35px;
+.page-item, .page-nav {
+  /* Hepsiburada stilindeki gibi küçük boyutlar */
+  width: 28px;  
+  height: 28px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #ddd;
+  
+  /* Temiz ve sade renkler */
+  border: 1px solid #e5e5e5;
+  background-color: #f6f6f6;
+  color: #333;
+  
+  /* Küçük font */
+  font-size: 12px;
   border-radius: 4px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: all 0.2s;
+  padding: 0; /* Tarayıcı paddinglerini sıfırla */
+  min-width: auto;
 }
 
+/* Hover efekti */
+.page-item:hover:not(.active), .page-nav:hover:not(:disabled) {
+  background-color: #eee;
+  border-color: #ccc;
+}
+
+/* Aktif sayfa vurgusu */
 .page-item.active {
-  border-color: #ff6000;
+  background-color: #fff;
+  border-color: #ff6000; /* Mevcut turuncunla uyumlu */
   color: #ff6000;
   font-weight: bold;
+}
+
+/* Pasif butonlar */
+.page-nav:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .product-toolbar {

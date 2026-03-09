@@ -25,24 +25,23 @@ const ProductList = () => {
 
   return (
     <div className="product-list-wrapper">
+      {/* Toolbar kısmı aynı kalıyor */}
       <div className="product-toolbar">
         <div className="toolbar-spacer"></div>
-
         <select
-    className="native-selectbox"
-    value={sortBy || ""} 
-    onChange={(e) => dispatch(setSortOrder(e.target.value))}
-  >
-    {/* İlk başta bu görünecek ama liste açılınca seçilemeyecek */}
-    <option value="" disabled hidden>Sıralama</option>
-    
-    <option value="lowestPrice">En Düşük Fiyat</option>
-    <option value="highestPrice">En Yüksek Fiyat</option>
-  <option value="newest-az">En Yeniler (A{">"}Z)</option>
+          className="native-selectbox"
+          value={sortBy || ""} 
+          onChange={(e) => dispatch(setSortOrder(e.target.value))}
+        >
+          <option value="" disabled hidden>Sıralama</option>
+          <option value="lowestPrice">En Düşük Fiyat</option>
+          <option value="highestPrice">En Yüksek Fiyat</option>
+          <option value="newest-az">En Yeniler (A{">"}Z)</option>
           <option value="newest-za">En Yeniler (Z{">"}A)</option>
-  </select>
+        </select>
       </div>
 
+      {/* Grid yapısı aynı kalıyor */}
       <div className="product-grid">
         {currentItems.map((product) => (
           <ProductCard
@@ -54,6 +53,7 @@ const ProductList = () => {
         ))}
       </div>
 
+      {/* Güncellenmiş Sola Yaslı Pagination */}
       {totalPages > 1 && (
         <div className="pagination">
           <button
