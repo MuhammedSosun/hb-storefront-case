@@ -19,15 +19,44 @@
   max-width: 640px;
 }
 
+/* EKSİK OLAN İKON BURADA */
+.search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid #919191;
+  border-radius: 50%;
+  box-sizing: border-box;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.search-icon::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 2px;
+  background: #919191;
+  right: -5px;
+  bottom: -1px;
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+
 .search-bar input {
   width: 100%;
-  padding: 10px 15px 10px 52px;
+  height: 48px;
+  /* padding-left: 52px ikonun arkasında kalmamayı sağlar */
+  padding: 10px 15px 10px 52px; 
   border: 1px solid var(--border-color);
   border-radius: 999px;
   background: #f3f3f3;
-  height: 48px;
   box-sizing: border-box;
   outline: none;
+  font-size: 15px;
 }
 
 .header-right {
@@ -76,6 +105,15 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  visibility: hidden; /* Varsayılan gizli */
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+/* Hover durumunda görünür yap */
+.cart-wrapper:hover .cart-dropdown {
+  visibility: visible;
+  opacity: 1;
 }
 
 .cart-item {
@@ -105,6 +143,11 @@
   .search-bar input {
     height: 40px;
     font-size: 14px;
+    padding-left: 45px; /* Mobilde biraz daha daraltılabilir */
+  }
+
+  .search-icon {
+    left: 15px; /* Mobilde ikonu biraz daha sola çektik */
   }
 
   .header-right {
@@ -119,17 +162,10 @@
   }
 
   .cart-dropdown {
-    width: 280px; /* Sabit bir genişlik verelim ki çok yayılmasın */
-    position: absolute;
-    top: calc(100% + 10px);
-    /* Sepeti butonun bittiği yerden bağımsız olarak ekranın ortasına yaklaştıralım */
+    width: 280px;
     right: 50%; 
-    transform: translateX(50%); /* Bu iki satır sepeti yatayda merkeze çeker */
+    transform: translateX(50%);
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    left: auto; /* Left değerini sıfırlıyoruz */
-  }
-  cart-item {
-    gap: 15px;
-    padding: 12px 5px;
+    left: auto;
   }
 }
