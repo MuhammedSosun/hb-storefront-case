@@ -2,6 +2,9 @@
   background: var(--white);
   padding: 15px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: relative;
+  z-index: 1000;
 }
 
 .header-content {
@@ -10,12 +13,21 @@
   justify-content: space-between;
 }
 
+.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+}
+
 .search-bar input {
-  width: 400px;
-  padding: 10px 15px;
+  width: 100%;
+  padding: 10px 15px 10px 52px;
   border: 1px solid var(--border-color);
-  border-radius: 8px;
-  background: #eee;
+  border-radius: 999px;
+  background: #f3f3f3;
+  height: 48px;
+  box-sizing: border-box;
+  outline: none;
 }
 
 .header-right {
@@ -24,7 +36,11 @@
   gap: 15px;
 }
 
-/* Cart Styles */
+.cart-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
 .cart-button {
   background: var(--white);
   border: 1px solid var(--border-color);
@@ -32,6 +48,7 @@
   border-radius: 5px;
   cursor: pointer;
   position: relative;
+  white-space: nowrap;
 }
 
 .cart-count {
@@ -45,38 +62,74 @@
   right: -5px;
 }
 
-.cart-wrapper {
-  position: relative;
-  padding-bottom: 10px;
-}
-
 .cart-dropdown {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 5px);
   right: 0;
   width: 300px;
-  background: var(--white);
-  border: 1px solid var(--border-color);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
   border-radius: 4px;
-  padding: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .cart-item {
   display: flex;
-  gap: 10px;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
   align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f5f5f5;
 }
 
-.remove-btn {
-  background: none;
-  border: none;
-  color: #ff0000;
-  font-size: 11px;
-  cursor: pointer;
-  padding: 0;
-  margin-top: 5px;
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 15px;
+  }
+
+  .logo img {
+    width: 110px;
+  }
+
+  .search-bar {
+    max-width: 100%;
+    order: 3;
+  }
+
+  .search-bar input {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: center;
+    order: 2;
+  }
+
+  .cart-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cart-dropdown {
+    width: 280px; /* Sabit bir genişlik verelim ki çok yayılmasın */
+    position: absolute;
+    top: calc(100% + 10px);
+    /* Sepeti butonun bittiği yerden bağımsız olarak ekranın ortasına yaklaştıralım */
+    right: 50%; 
+    transform: translateX(50%); /* Bu iki satır sepeti yatayda merkeze çeker */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    left: auto; /* Left değerini sıfırlıyoruz */
+  }
+  cart-item {
+    gap: 15px;
+    padding: 12px 5px;
+  }
 }
